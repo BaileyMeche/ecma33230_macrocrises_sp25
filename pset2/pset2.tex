@@ -240,14 +240,21 @@
     \item (12 points) Consider the Arellano (2008) model of sovereign default discussed in class. Sketch a 2-D graph that displays the default policy of the government in terms of the default income threshold $y^*(B)$. Your graph should include at least the following description/labels as defined in the lecture: $y^*(B)$, 0, $y$, $B$, $\bar{B}$, $\underline{B}$, $y_{\min}$, $y_{\max}$, $B^*$, $Z$, repayment region, default region.
     \subsubsection*{Solution}
 
+    We plot a $(B \times y)$ figure for the following function $y^*: \mathbb{R}^{\leq 0} \to \mathbb{R}^{\geq 0}$:
+\begin{align*}
+  V^r(B,y) &= 2B + y^2 
+  \\ V^d(y) &= 0.3y
+  \\ y^*(B) &= \frac{1}{2}\left(0.3+\sqrt{(-0.3)^{2}-4\left(2B\right)}\right).
+\end{align*}
     See Figure \eqref{fig:4} for this plot.
     \begin{figure}[h]
             \centering
-                \includegraphics[width=0.9\textwidth]{pset2/q4.png}
+                \includegraphics[width=0.65\textwidth]{pset2/q4.png}
                 \caption{Arellano (2008) - Problem 4}
                 \label{fig:4}
         \end{figure}
 
+    \newpage 
     \item (20 points) The benevolent and strategic government of a small open economy maximizes an expected infinite stream of period utilities from consumption $u(c)$, discounted with a discount factor $\beta = 0.8$. Stochastic endowments $y_t \geq 0$ follow a Markov process with the AR(1) transition rule:
     \[
     f(y_{t+1} \mid y_t): \quad \ln(y_{t+1}) = \rho \ln(y_t) + \sigma_\varepsilon \varepsilon_{t+1},
@@ -263,14 +270,16 @@
         For endowment in $t=1$ as $y$, consumption $c(y)$, and state $s\in \{$repay, default\}, the government's budget constraint is given by:
         \[ c(y,s) = \begin{cases}
             y + B - q(B',y)B' & s=\text{repay}
-            \\ h(y) & s=\text{default}
+            \\ hy & s=\text{default}
         \end{cases} 
         \]
         At the beginning of each period, the government inherits $B<0$ and observes $y$ based on $(B,y)$ decides to repay or default. The value function of the government deciding to repay or default is given by 
         \begin{align*}
             V^o(B,y) &= \max \{V^r(B,y), V^d(y)\}
             \\ V^r(B,y) &= \max_{B' \geq -Z} \left\{u(c(y,s=\text{repay}))+ \beta \int_{y'}  V^o(B',y') f(y' \mid y)dy' \right\}
+            \\&= \max_{B' \geq -Z} \left\{u(y + B - q(B',y)B')+ \beta \mathbb{E}_{y'} \left[  V^o(B',y') \mid y  \right]\right\}
             \\ V^d(y) &=  u(c(y,s=\text{default})) + \beta \int_{y'}  \left[ (1-\theta)V^d(y') + \theta V^o(0,y') \right] f(y' \mid y) dy'
+            \\ &=  u(hy) + \beta\mathbb{E}_{y'}  \left[ (1-\theta)V^d(y') + \theta V^o(0,y') \right] .
         \end{align*}
 
         \item (4 points) Suppose the default threshold $y^*(B)$, at which the government is indifferent between default and repayment in the $(B, y)$-space, is given by $y^*(B) = 5 + \frac{15}{B - 3}$. What is the default probability if the government chooses $B' = -1$ and is currently in state $y = 1.1$?
