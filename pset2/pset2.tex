@@ -47,6 +47,11 @@
 
     In sovereign default models, limited commitment refers to the decision of the government to repay debt back to creditors based solely on their relative utility. Limited enforcement refers to the few external forces to incentivize repayment by the government to its creditors in the case where it may be more profitable for it to default. In the discussed models, the only enforcement tools offered are reputation loss by financial exclusion and economic damage via output loss. These are often not enough to completely disincentivize default, hence there exists a limited enforcement problem. 
 
+Limited commitment does imply the government makes a decision contingent on utility, but we should also note its payoffs within each period. More broadly limited commitment, is a statement stating that the agent in time t cannot credibly "tie its hands" and commit to a certain action in time t'.
+
+Limited enforcement refers to the lack of an "enforcement authority/mechanism" like a government/court that can compel action. In this case, it is a statement there is no "supranational" authority that could force repayment. This is somewhat distinct from "incentives" the agent faces.
+
+When there are incentives for a rational agent to do something desireable, we would call it incentive compatible.
     
     \item (12 points) {Eaton-Gersovitz (1981) model:} A country issues debt $b' > 0$ at a price $q(b')$ in period 1 to roll over outstanding debt $b > 0$. The benevolent and strategic government lacks commitment as to whether it repays or defaults on its debt in period 2. Output in period 2 is stochastic and denoted by $y'(s) = \sqrt{s}$, where each realization of the state $s \in \{1, 4, 9\}$ occurs with probabilities:
     \[
@@ -231,7 +236,7 @@
        \\ & = \begin{cases}
             0.8& y=2
             \\ 0.2 & y=2.5
-            \\ 0.02 & y=3
+            \\ 0.05 & y=3
         \end{cases}
         \end{align*}
 
@@ -278,8 +283,10 @@
             V^o(B,y) &= \max \{V^r(B,y), V^d(y)\}
             \\ V^r(B,y) &= \max_{B' \geq -Z} \left\{u(c(y,s=\text{repay}))+ \beta \int_{y'}  V^o(B',y') f(y' \mid y)dy' \right\}
             \\&= \max_{B' \geq -Z} \left\{u(y + B - q(B',y)B')+ \beta \mathbb{E}_{y'} \left[  V^o(B',y') \mid y  \right]\right\}
-            \\ V^d(y) &=  u(c(y,s=\text{default})) + \beta \int_{y'}  \left[ (1-\theta)V^d(y') + \theta V^o(0,y') \right] f(y' \mid y) dy'
-            \\ &=  u(hy) + \beta\mathbb{E}_{y'}  \left[ (1-\theta)V^d(y') + \theta V^o(0,y') \right] .
+            \\ V^d(B,y) &=  u(c(y,s=\text{default})) + \beta \int_{y'}  \left[ (1-\theta)V^d(y') + \theta V^o((1-h)B,y') \right] f(y' \mid y) dy'
+            %\\ &=  u(hy) + \beta\mathbb{E}_{y'}  \left[ (1-\theta)V^d(y') + \theta V^o(0,y') \right] .
+            \\ &= V^d(B, y) = u(c(y)) + \beta \int_0^1 [ (1 - \theta) V^d\left(B, \exp\{\rho \log(y) + \sigma_\varepsilon \varepsilon'\} \right) 
+            \\ &+ \theta V^0\left((1 - h)B, \exp\{\rho \log(y) + \sigma_\varepsilon \varepsilon'\} \right) ] d\varepsilon'
         \end{align*}
 
         \item (4 points) Suppose the default threshold $y^*(B)$, at which the government is indifferent between default and repayment in the $(B, y)$-space, is given by $y^*(B) = 5 + \frac{15}{B - 3}$. What is the default probability if the government chooses $B' = -1$ and is currently in state $y = 1.1$?

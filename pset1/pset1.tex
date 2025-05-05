@@ -56,6 +56,7 @@ aspects of the financial crisis the model can capture.
 
 The credit crunch model discussed in class captures the following empirical phenomena: collapsed bank collateral, decreased intermediation, and increased interest rate spreads (here, borrowing vs lending rates).
 
+The model can also capture capture less investment by firms (via lower borrowing), unconventional monetary policy, and reductions in deposits via the incentive constraint. 
 
     \item[3.] (9 points) Consider the 2-period credit crunch model discussed in class. Indicate for each statement below if it’s true or false and give a short explanation. No credit without correct explanation.
     \begin{enumerate}
@@ -66,33 +67,38 @@ The credit crunch model discussed in class captures the following empirical phen
 
         This depends on where the supply curve lies. If the supply is such that $R^d=R^s$, then first-best pricing consumption is equal to the decentralized consumption for both periods. This indicates that the decentralized allocation is efficient, so utility is equal to first-best pricing.
 
-        If $R^d<R^s$, however, the decentralized problem is inefficient since $c_1>c_1^*$ and $c_2<c_2^*$ where first best allocation consumption is $c^*$. Computing utility for the first best allocation $u^*$ 
-        \begin{align}
-            u^*(y,N,\beta,R^s)&= \max_{c_1,c_2,s} \ln(c_1^*) + \beta \ln(c_2^*) \notag 
-            \\ &= \ln\left(\frac{y+N}{1+\beta}\right) + \beta \ln\left(\frac{R^s \beta (y+N)}{1+\beta}\right)\label{1}
-        \end{align}
-         Computing utility for the decentralized problem $u$
-         \begin{align}
-             u(y,N,\beta,R^s,R^d)&= \max_{c_1,c_2,s} \ln(c_1^*) + \beta \ln(c_2^*) \notag 
-             \\ &= \ln\left( \frac{R^s(y+N)}{\beta R^d + R^s} \right) + \beta \ln\left( R^s \left( y+N - \frac{R^s}{\beta R^d + R^s} \right)\right) \label{2}
-         \end{align}
-         Comparing \eqref{1} and \eqref{2}
-         \begin{align}
-              %\ln\left(\frac{y+N}{1+\beta}\right) + \beta \ln\left(\frac{R^s \beta (y+N)}{1+\beta}\right) &=^? \ln\left( \frac{R^s(y+N)}{\beta R^d + R^s} \right) + \beta \ln\left( R^s \left( y+N - \frac{R^s}{\beta R^d + R^s} \right)\right)
-              %\\ \frac{(y+N)^{1+\beta} (R^s\beta)^\beta}{(1+\beta)^{1+\beta}} &=^? \frac{R^s(y+N)}{\beta R^d + R^s}\left( R^s \left( y+N - \frac{R^s}{\beta R^d + R^s} \right)\right)^\beta 
-              u^* - u =  \eqref{1} - \eqref{2} &=  \ln\left(\frac{\beta R^d + R^s}{R^s(1+\beta)}  \right) + \beta \notag \ln\left(\frac{\beta (y+N)}{(1+\beta) \left( y+N - \frac{R^s}{\beta R^d + R^s} \right)} \right)
-               \\ &= \ln\left(\frac{\beta R^d + R^s}{R^s(1+\beta)}  \right) + \beta \ln\left(\frac{\beta (N + y) (\beta R^d + R^s)}{(\beta + 1) (\beta N R^d + \beta y R^d + N R^s + y R^s - R^s)}\right)\label{3}
-         \end{align}
-         Here, by monotonicity, we have \eqref{3} is strictly decreasing in $y+N$. Using this, 
-         \[ \begin{cases}
-             u^* \geq u & \text{if } \frac{R^d}{R^s} \geq  \frac{ (1 + \beta)^\beta + \beta (1 + \beta)^\beta-\beta^\beta}{\beta^{1 + \beta}}
-             \\ u^* < u & \text{if }  \frac{R^d}{R^s} < \frac{ (1 + \beta)^\beta + \beta (1 + \beta)^\beta-\beta^\beta}{\beta^{1 + \beta}}
-         \end{cases}\]
-         with a rough solution around $ \frac{ (1 + \beta)^\beta + \beta (1 + \beta)^\beta-\beta^\beta}{\beta^{1 + \beta}}=3$, indicating that $u^* \geq u$ when $R^d \geq 3 R^s.$         
-         This threshold function is decreasing in $\beta$ with a minimum value of 3 ($\beta=1$). Hence, for values $0< \beta < 1$, we get $u^* < u$.
+        If $R^d<R^s$, however, the decentralized problem is inefficient since $c_1>c_1^*$ and $c_2<c_2^*$ where first best allocation consumption is $c^*$. The first best utility $u^*$ is always higher than the inefficient outcome $u$ and will always generate weakly greater utility than the decentralized problem.
+        Hence, the statement is false. 
 
-         Therefore, the statement is true for $R^d<R^s$.
-         %the likelihood of the planners utility $u^*$ rises when $R^s$ is low.
+        %Hence, in any case, the statement that first best allocation delivers a higher consumption level in the first period and lower consumption level in the second period is true, but the first best allocation delivers a \emph{higher} consumption level in the second period but overall a higher utility than an inefficient        equilibrium.
+        
+        % Computing utility for the first best allocation $u^*$ 
+        % \begin{align}
+        %     u^*(y,N,\beta,R^s)&= \max_{c_1,c_2,s} \ln(c_1^*) + \beta \ln(c_2^*) \notag 
+        %     \\ &= \ln\left(\frac{y+N}{1+\beta}\right) + \beta \ln\left(\frac{R^s \beta (y+N)}{1+\beta}\right)\label{1}
+        % \end{align}
+        %  Computing utility for the decentralized problem $u$
+        %  \begin{align}
+        %      u(y,N,\beta,R^s,R^d)&= \max_{c_1,c_2,s} \ln(c_1^*) + \beta \ln(c_2^*) \notag 
+        %      \\ &= \ln\left( \frac{R^s(y+N)}{\beta R^d + R^s} \right) + \beta \ln\left( R^s \left( y+N - \frac{R^s}{\beta R^d + R^s} \right)\right) \label{2}
+        %  \end{align}
+        %  Comparing \eqref{1} and \eqref{2}
+        %  \begin{align}
+        %       %\ln\left(\frac{y+N}{1+\beta}\right) + \beta \ln\left(\frac{R^s \beta (y+N)}{1+\beta}\right) &=^? \ln\left( \frac{R^s(y+N)}{\beta R^d + R^s} \right) + \beta \ln\left( R^s \left( y+N - \frac{R^s}{\beta R^d + R^s} \right)\right)
+        %       %\\ \frac{(y+N)^{1+\beta} (R^s\beta)^\beta}{(1+\beta)^{1+\beta}} &=^? \frac{R^s(y+N)}{\beta R^d + R^s}\left( R^s \left( y+N - \frac{R^s}{\beta R^d + R^s} \right)\right)^\beta 
+        %       u^* - u =  \eqref{1} - \eqref{2} &=  \ln\left(\frac{\beta R^d + R^s}{R^s(1+\beta)}  \right) + \beta \notag \ln\left(\frac{\beta (y+N)}{(1+\beta) \left( y+N - \frac{R^s}{\beta R^d + R^s} \right)} \right)
+        %        \\ &= \ln\left(\frac{\beta R^d + R^s}{R^s(1+\beta)}  \right) + \beta \ln\left(\frac{\beta (N + y) (\beta R^d + R^s)}{(\beta + 1) (\beta N R^d + \beta y R^d + N R^s + y R^s - R^s)}\right)\label{3}
+        %  \end{align}
+        %  Here, by monotonicity, we have \eqref{3} is strictly decreasing in $y+N$. Using this, 
+        %  \[ \begin{cases}
+        %      u^* \geq u & \text{if } \frac{R^d}{R^s} \geq  \frac{ (1 + \beta)^\beta + \beta (1 + \beta)^\beta-\beta^\beta}{\beta^{1 + \beta}}
+        %      \\ u^* < u & \text{if }  \frac{R^d}{R^s} < \frac{ (1 + \beta)^\beta + \beta (1 + \beta)^\beta-\beta^\beta}{\beta^{1 + \beta}}
+        %  \end{cases}\]
+        %  with a rough solution around $ \frac{ (1 + \beta)^\beta + \beta (1 + \beta)^\beta-\beta^\beta}{\beta^{1 + \beta}}=3$, indicating that $u^* \geq u$ when $R^d \geq 3 R^s.$         
+        %  This threshold function is decreasing in $\beta$ with a minimum value of 3 ($\beta=1$). Hence, for values $0< \beta < 1$, we get $u^* < u$.
+
+        %  Therefore, the statement is true for $R^d<R^s$.
+        %  %the likelihood of the planners utility $u^*$ rises when $R^s$ is low.
         
     
      \item (3 points) Bankers have the same optimization problem with or without publicly funded
@@ -108,7 +114,7 @@ The credit crunch model discussed in class captures the following empirical phen
     %\textcolor{red}{NOT DISCUSSED YET }
     For this government intervention, the banker's problem is given by 
     \begin{align}
-            \max_{s,d}\pi =&\max_{d}  R^s(N+d) - R^dd - (R^s-R^d)T   \label{3cb}
+            \max_{s,d}\pi =&\max_{d}  R^s(N+d) - R^dd+ (R^s-R^d)T   \label{3cb}
             \\ & s.t. &\begin{cases}
                 s \leq N + d + T & (BC)
                 \\ \pi \geq \lambda R^s(N+d) + \lambda (R^s - R^d)T & (IC)
@@ -126,28 +132,37 @@ The credit crunch model discussed in class captures the following empirical phen
     Solving \eqref{3cb}:
     \begin{align*}
         \pi &\geq \lambda R^ss 
-        \\ \left(R^{s}-R^{d}\right)(N+d-T)+R^{d}N &\geq \lambda R^s(N+d+T)
-         \\ R^{d}T-d\left(R^{d}+\left((\lambda-1)\left(N+1\right)+\left(\lambda+1\right)T\right)R^{s}\right) &\geq 0 & \text{(demand)}
-         \\ d= \begin{cases}
-             %0 & R^d > R^s
-              \frac{(1-\lambda)}{\lambda}N-T & R^d = R^s 
-             \\ \frac{R^{d}T}{R^{d}+\left((\lambda-1)\left(N+1\right)+\left(\lambda+1\right)T\right)R^{s}} & (1-\lambda)R^s < R^d < R^s
-         \end{cases} && \text{(demand)}
+        \\ R^s(N+d) - R^dd+ (R^s-R^d)T   &\geq \lambda R^s(N+d+T)
+        \\ R^s(N+d+T) - R^sT- R^dd+ (R^s-R^d)T  &\geq \lambda R^s(N+d+T)
+        \\  - R^sT- R^dd+ R^sT - R^dT &\geq (\lambda-1) R^s(N+d+T)
+        \\ \lambda &\leq 1- \frac{R^d(d+T)}{ R^s(N+d+T)} 
+        \\ d &\leq \frac{\left(1-\lambda\right)R^{s}\left(N+T\right)-R^{d}T}{R^{d}-\left(1\ -\lambda\right)R^{s}}
+         % \\ R^{d}T-d\left(R^{d}+\left((\lambda-1)\left(N+1\right)+\left(\lambda+1\right)T\right)R^{s}\right) &\geq 0 & \text{(demand)}
+         % \\ d= \begin{cases}
+         %     %0 & R^d > R^s
+         %      \frac{(1-\lambda)}{\lambda}N-T & R^d = R^s 
+         %     \\ \frac{R^{d}T}{R^{d}+\left((\lambda-1)\left(N+1\right)+\left(\lambda+1\right)T\right)R^{s}} & (1-\lambda)R^s < R^d < R^s
+         % \end{cases} && \text{(demand)}         
     \end{align*}
     From this, we see that the banker's problem has changed. Comparing this with the original demand function,
-    \[d' = \begin{cases}
-         \frac{(1-\lambda)}{\lambda}N & R^d = R^s 
-             \\ \frac{\left(1-\lambda\right)R^{s}N}{R^{d}-\left(1-\lambda\right)R^{s}} & (1-\lambda)R^s < R^d < R^s
-    \end{cases}\]
-    we have  in region $R^d = R^s $ that clearly $d'>d$ as $T>0$. In fact, there is a linear decrease in demand as deposits increase.  In region $R^d < R^s $, suppose it is true that $d'>d$. Let $K= (\lambda-1)\left(N+1\right)+\left(\lambda+1\right)T$
-    \begin{align*}
-        \frac{R^{d}T}{R^{d}+\left((\lambda-1)\left(N+1\right)+\left(\lambda+1\right)T\right)R^{s}} <  \frac{\left(1-\lambda\right)R^{s}N}{R^{d}-\left(1-\lambda\right)R^{s}} 
-        \\ T (R^d)^2 - T(1-\lambda)R^d R^s-(1-\lambda)R^s N R^d - (1-\lambda)(R^s)^2 NK &<  0
-        \\ (1-\lambda)(T+N)R^s R^d + (1-\lambda)(R^s)^2 NK &<T(R^d)^2
-         \\ T\lambda  + (1-\lambda)N^2 &< N (\lambda+1)T
-          \\ T &> \frac{(1-\lambda)N^2}{N(1+\lambda)-\lambda}
-    \end{align*}
-    Hence, our supposition that $d'>d$ is equivalent to the statement $T > \frac{(1-\lambda)N^2}{N(1+\lambda)-\lambda}$ which is true when both $T$ and $N$ are greater than 0.5 for all $0<\lambda<1$. Therefore, the statement is true - deposit demand is lower with publicly funded bank deposits.
+    \[ R^d = \begin{cases}
+        R^s & d=\left( 0,\frac{(1-\lambda)}{\lambda}N\right), \ T=0
+        \\ (1-\lambda) R^s \frac{N+d+T  }{d+T} & d \geq \frac{(1-\lambda)}{\lambda}N, \ T \geq 0
+    \end{cases}
+    \]
+    % \[d' = \begin{cases}
+    %      \frac{(1-\lambda)}{\lambda}N & R^d = R^s 
+    %          \\ \frac{\left(1-\lambda\right)R^{s}N}{R^{d}-\left(1-\lambda\right)R^{s}} & (1-\lambda)R^s < R^d < R^s
+    % \end{cases}\]
+    % we have  in region $R^d = R^s $ that clearly $d'>d$ as $T>0$. In fact, there is a linear decrease in demand as deposits increase.  In region $R^d < R^s $, suppose it is true that $d'>d$. Let $K= (\lambda-1)\left(N+1\right)+\left(\lambda+1\right)T$
+    % \begin{align*}
+    %     \frac{R^{d}T}{R^{d}+\left((\lambda-1)\left(N+1\right)+\left(\lambda+1\right)T\right)R^{s}} <  \frac{\left(1-\lambda\right)R^{s}N}{R^{d}-\left(1-\lambda\right)R^{s}} 
+    %     \\ T (R^d)^2 - T(1-\lambda)R^d R^s-(1-\lambda)R^s N R^d - (1-\lambda)(R^s)^2 NK &<  0
+    %     \\ (1-\lambda)(T+N)R^s R^d + (1-\lambda)(R^s)^2 NK &<T(R^d)^2
+    %      \\ T\lambda  + (1-\lambda)N^2 &< N (\lambda+1)T
+    %       \\ T &> \frac{(1-\lambda)N^2}{N(1+\lambda)-\lambda}
+    % \end{align*}
+    % Hence, our supposition that $d'>d$ is equivalent to the statement $T > \frac{(1-\lambda)N^2}{N(1+\lambda)-\lambda}$ which is true when both $T$ and $N$ are greater than 0.5 for all $0<\lambda<1$. Therefore, the statement is true - deposit demand is lower with publicly funded bank deposits.
     % Solving \eqref{3ch}: 
     % \begin{align*}
     %     c_1 &= \frac{y + \frac{\pi}{R^d}}{1+\beta }=  \frac{y+\frac{R^s(N+d) - R^dd - (R^s-R^d)T }{R^{d}}}{1+\beta} = \frac{y+\frac{\left(R^{s}-R^{d}\right)(N+d-T)+R^{d}N}{R^{d}}}{1+\beta}
@@ -172,7 +187,7 @@ The credit crunch model discussed in class captures the following empirical phen
             d^s &= y - \frac{R^s(N+y)}{\beta R^d + R^s}
             \\ d^d &= \begin{cases}
                 \frac{1-\lambda}{\lambda}N &R^d = R^s
-                \\ \frac{(1-\lambda)R^sN}{R^d - (1-\lambda)R^s} & R^d < R^s
+                \\ \frac{(1-\lambda)R^sN}{R^d - (1-\lambda)R^s} & (1-\lambda)R^s < R^d < R^s
             \end{cases}.
         \end{align*}
         Plugging in assumed values: 
@@ -199,7 +214,10 @@ The credit crunch model discussed in class captures the following empirical phen
         \item[(c)] {(5 points)} Describe both curves and interpret what happens in each region. \textit{Hint:} When discussing demand, check for $R_d > R_s$, $R_d = R_s$, $(1 - \lambda)R_s < R_d < R_s$, $R_d < (1 - \lambda)R_s$.
         \subsubsection*{Solution.}
 
-        In $R_d > R_s$, with every additional dollar of deposits, banker loses money, so $d=0$. In $R_d = R_s$, banks make zero profits on deposits and incentive constraint is slack (this is the flat region of the orange line). In $(1 - \lambda)R_s < R_d < R_s$, $R_d < (1 - \lambda)R_s$, the bank makes profits on deposits, and incentive constraint binds where $d==\frac{\frac{39}{125}}{R^d - \frac{78}{125}} = \frac{39}{125R^{d}-78}.$
+        In $R_d > R_s$, with every additional dollar of deposits, banker loses money, so $d=0$. In $R_d = R_s$, banks make zero profits on deposits and incentive constraint is slack (this is the flat region of the orange line). In $(1 - \lambda)R_s < R_d < R_s$, $R_d < (1 - \lambda)R_s$, the bank makes profits on deposits, and incentive constraint binds where $d=\frac{\frac{39}{125}}{R^d - \frac{78}{125}} = \frac{39}{125R^{d}-78}.$
+        For the asymptote of $R^d$, we have a lower bound of $R^d = (1-\lambda)R^s.$
+
+        For a discussion of supply from households, households make deposits at an increasing rate with $R^d$. Deposits $d$ are only made at the intersection point with demand.
         
         \item[(d)] {(4 points)} Find the equilibrium by eyeballing the graph. What is the equilibrium deposit rate and deposit quantity? What is the spread? How much profits do banks make?
         \subsubsection*{Solution.}
@@ -216,13 +234,13 @@ The credit crunch model discussed in class captures the following empirical phen
         \item[(e)] {(6 points)} Plot (in the same graph from part (b)) and describe what happens to deposit demand and supply if bankers' net worth has risen to $N = 1.2$ at the beginning of period 1. Provide intuition. What is the value of the spread now?
         \subsubsection*{Solution.}
 
-        See Figure \eqref{fig:4e} for the new demand and supply functions overlayed on Figure \eqref{fig:4b}. The intersection for the functions at $N=1.2$ is at ($d = 0.8687$, $R_d = 1.03$). Now, the incentive constraint is slack since we are in the region where $R^d = R^s$, spread is 0.
+        See Figure \eqref{fig:4e} for the new demand and supply functions overlayed on Figure \eqref{fig:4b}. The intersection for the functions at $N=1.2$ is at ($d = 0.8687$, $R_d = 1.03$). Now, the incentive constraint is slack since we are in the region where $R^d = R^s$, spread is 0. Demand has moved rightward since $N$ has increased, moving $\frac{\lambda-1}{\lambda}N$. The supply function has shifted rightward by $R^s(N^\text{new}-N^\text{old})$.  The intuition for the shift is by increasing N we increase the payment from the bank the household gets in time 2. Thus they have less incentive to save in time 1. Likewise for demand, the increase in N alters the size of the region where the IC is slack.
 
         
         \begin{figure}%[H]
             \centering
                 \includegraphics[width=0.7\textwidth]{4e.png}
-                \caption{ }
+                \caption{Part (e) }
                 \label{fig:4e}
         \end{figure}
         
@@ -301,15 +319,18 @@ The credit crunch model discussed in class captures the following empirical phen
     \]
     Solving the planner's problem: 
     \begin{align*}
-       \frac{\partial}{\partial s}: && -\left( y+N-s\right)^{-\sigma} + \beta R^s \left(R^ss \right)^{-\sigma} =0
+       \frac{\partial}{\partial s}: && -\left( c_1\right)^{-\sigma} + \beta R^s \left(c_2 \right)^{-\sigma} &=0
+       \\ && -\left( c_1\right)^{-\sigma} + \beta R^s \left(R^s(N+y-c_1 \right)^{-\sigma} &=0
+       \\  && c_1^* &= \frac{R^{s}(N+y)}{R^{s}\left(\beta R^{s}\right)^{\frac{1}{\sigma}}+1}.
+       %\frac{\left( \beta R^s \right)^{-\frac{1}{\sigma}} R^s (N+y)}{1+R^s\left( \beta R^s \right)^{-\frac{1}{\sigma}}}
     \end{align*}
 
-        \begin{empheq}[box=\fbox]{align*}
-          s^* &= \frac{\left(\beta R^{s}\right)^{\frac{1}{\sigma}}}{R^{s}\left(y+N-s\right)} & \text{(first best loan level to firms)}
-        \\ c_1^* &=  y + N-\frac{\left(\beta R^{s}\right)^{\frac{1}{\sigma}}}{R^{s}\left(y+N-s\right)} & \text{(first best consumption level)}
-        \\c_2^* &=  \frac{ \left(\beta R^{s}\right)^{\frac{1}{\sigma}}}{y+N-s} 
-        \\ d^* &= \frac{\left(\beta R^{s}\right)^{\frac{1}{\sigma}}}{R^{s}\left(y+N-s\right)}-N
-        \end{empheq}
+        % \begin{empheq}[box=\fbox]{align*}
+        %   s^* &= \frac{\left(\beta R^{s}\right)^{\frac{1}{\sigma}}}{R^{s}\left(y+N-s\right)} & \text{(first best loan level to firms)}
+        % \\ c_1^* &=  y + N-\frac{\left(\beta R^{s}\right)^{\frac{1}{\sigma}}}{R^{s}\left(y+N-s\right)} & \text{(first best consumption level)}
+        % \\c_2^* &=  \frac{ \left(\beta R^{s}\right)^{\frac{1}{\sigma}}}{y+N-s} 
+        % \\ d^* &= \frac{\left(\beta R^{s}\right)^{\frac{1}{\sigma}}}{R^{s}\left(y+N-s\right)}-N
+        % \end{empheq}
         
     \end{enumerate}
 
@@ -320,38 +341,52 @@ The credit crunch model discussed in class captures the following empirical phen
         \subsubsection*{Solution.}
 
         
-    We have the household's problem with utility as in the lecture. Let $\pi = R^s(N+d) - R^dd - (R^s-R^d)T.$
+    We have the household's problem with utility as in the lecture. Let $\pi = R^s(N+d) - R^dd + (R^s-R^d)T.$ At time 1, the government transfers T from the household to the bank. At time 2, the government transfers $R^dT$ from the bank to the household. The bank adds $(R^s - R^d)T$ to profits.
+    
     \begin{align}
             &\max_{c_1, c_2}  \ln(c_1) + \beta \ln(c_2)
             && s.t. &\begin{cases}
                 c_1 + d + T =y & (t=1)
                 \\ c_2 = R^d(d+T) + \pi  & (t=2)
             \end{cases} \label{3ch}
-            \\ &&& \iff & c_2 = R^dy + \pi - R^d c_1 \notag  %c_1 = \frac{R^dy + \pi -c_2}{R^d} \notag 
+        \\ &&& \iff & c_2 = R^d(y-c_1) + \pi \notag  %c_1 = \frac{R^dy + \pi -c_2}{R^d} \notag 
     \end{align}
     
     Solving the problem \eqref{3ch}: 
-    \begin{align}
-        c_1 &= \frac{y + \frac{\pi}{R^d}}{1+\beta }=  \frac{y+\frac{R^s(N+d) - R^dd - (R^s-R^d)T }{R^{d}}}{1+\beta} = \frac{y+\frac{\left(R^{s}-R^{d}\right)(N+d-T)+R^{d}N}{R^{d}}}{1+\beta}\notag 
-        \\ d&= y - c_1 = \frac{\beta y-\frac{\left(R^{s}-R^{d}\right)(N+d -T)+R^{d}N}{R^{d}}}{1+\beta} \label{6a_d} %& \text{(supply)}
-        %\\ &=  \frac{\beta y-\frac{\left(R^{s}-R^{d}\right)(N+d -T)+R^{d}N}{R^{d}}}{1+\beta}
-        \\ c_2 &= R^dy + \pi - R^d c_1 = R^dy + \pi - R^d \cdot  \frac{y + \frac{\pi}{R^d}}{1+\beta }
-         = \frac{\beta\left(R^{d}y+\pi\right)}{1+\beta}\notag 
-          \\ &= \frac{\beta}{1+\beta}\left(R^{d}(y+N)+\left(R^{s}-R^{d}\right)(N+d-T)\right) \notag 
-    \end{align}
-    Simplifying \eqref{6a_d}:
-    \begin{align}
-        d&=  \frac{\beta y-\frac{\left(R^{s}-R^{d}\right)(N+d -T)+R^{d}N}{R^{d}}}{1+\beta}\notag 
-        \\ d \left(1+\frac{R^{s}-R^{d}}{\left(1+\beta\right)R^{d}} \right) &= \frac{R^{d}\beta y-\left(R^{s}-R^{d}\right)(N-T)+R^{d}N}{\left(1+\beta\right)R^{d}}\notag 
-        \\ d&=\frac{R^{d}\left(\beta y+N\right)-\left(R^{s}-R^{d}\right)(N-T)}{\beta R^{d}+R^{s}} \label{6a_d'}
-    \end{align}
-
-    Using \eqref{6a_d'} to solve for $c_1$ and $c_2$, we have the household policy functions for $c_1$, $c_2$ and $d$
-    
-            \begin{empheq}[box=\fbox]{align*}
-               d&=\frac{R^{d}\left(\beta y+N\right)-\left(R^{s}-R^{d}\right)(N-T)}{\beta R^{d}+R^{s}}           & (supply)  
-              \\ c_1 &= \frac{\left(R^{s}-2R^{d}\right)N+\left(R^{d}-R^{s}\right)T+R^{s}y}{\beta R^{d}+R^{s}}+\frac{2N}{\beta+1}         \\ c_2 &= \frac{\beta R^{d}\left(R^{s}\left(\beta+1\right)\left(N+y\right)+\left(R^{s}-R^{d}\right)\left(2N-\left(\beta+1\right)T\right)\right)}{\left(\beta+1\right)\left(\beta R^{d}+R^{s}\right)}
+    \begin{align*}
+        \frac{1}{c_1} -\frac{\beta R^dy}{R^d(y-c_1) + \pi} &= 0
+        \\ R^d(y-c_1) + \pi&= -c_1 \beta R^dy
+        \\  R^s(N+d) - R^dd + (R^s-R^d)T &= -c_1 \beta R^dy - R^d(y-c_1)
+    \end{align*}
+     \begin{empheq}[box=\fbox]{align*}
+               c_{1}&=\frac{R^{s}\left(N+d+T\right)+R^{d}\left(y-d-T\right)}{R^{d}\left(1-\beta y\right)}
+               \\ d &= y - T - c_1 
+               \\ &= y - T- \frac{R^{s}\left(N+d+T\right)+R^{d}\left(y-d-T\right)}{R^{d}\left(1-\beta y\right)}
+               \\ c_2 &=R^d(y-c_1) + \pi  
+               \\ &=  R^{d}\left(y-\frac{R^{s}\left(N+d+T\right)+R^{d}\left(y-d-T\right)}{R^{d}\left(1-\beta y\right)}\right)+R^{s}(N+d)-R^{d}d+(R^{s}-R^{d})T
             \end{empheq}
+    
+    % \begin{align}
+    %     c_1 &= \frac{y + \frac{\pi}{R^d}}{1+\beta }=  \frac{y+\frac{R^s(N+d) - R^dd - (R^s-R^d)T }{R^{d}}}{1+\beta} = \frac{y+\frac{\left(R^{s}-R^{d}\right)(N+d-T)+R^{d}N}{R^{d}}}{1+\beta}\notag 
+    %     \\ d&= y - c_1 = \frac{\beta y-\frac{\left(R^{s}-R^{d}\right)(N+d -T)+R^{d}N}{R^{d}}}{1+\beta} \label{6a_d} %& \text{(supply)}
+    %     %\\ &=  \frac{\beta y-\frac{\left(R^{s}-R^{d}\right)(N+d -T)+R^{d}N}{R^{d}}}{1+\beta}
+    %     \\ c_2 &= R^dy + \pi - R^d c_1 = R^dy + \pi - R^d \cdot  \frac{y + \frac{\pi}{R^d}}{1+\beta }
+    %      = \frac{\beta\left(R^{d}y+\pi\right)}{1+\beta}\notag 
+    %       \\ &= \frac{\beta}{1+\beta}\left(R^{d}(y+N)+\left(R^{s}-R^{d}\right)(N+d-T)\right) \notag 
+    % \end{align}
+    % Simplifying \eqref{6a_d}:
+    % \begin{align}
+    %     d&=  \frac{\beta y-\frac{\left(R^{s}-R^{d}\right)(N+d -T)+R^{d}N}{R^{d}}}{1+\beta}\notag 
+    %     \\ d \left(1+\frac{R^{s}-R^{d}}{\left(1+\beta\right)R^{d}} \right) &= \frac{R^{d}\beta y-\left(R^{s}-R^{d}\right)(N-T)+R^{d}N}{\left(1+\beta\right)R^{d}}\notag 
+    %     \\ d&=\frac{R^{d}\left(\beta y+N\right)-\left(R^{s}-R^{d}\right)(N-T)}{\beta R^{d}+R^{s}} \label{6a_d'}
+    % \end{align}
+
+    % Using \eqref{6a_d'} to solve for $c_1$ and $c_2$, we have the household policy functions for $c_1$, $c_2$ and $d$
+    
+    %         \begin{empheq}[box=\fbox]{align*}
+    %            d&=\frac{R^{d}\left(\beta y+N\right)-\left(R^{s}-R^{d}\right)(N-T)}{\beta R^{d}+R^{s}}           & (supply)  
+    %           \\ c_1 &= \frac{\left(R^{s}-2R^{d}\right)N+\left(R^{d}-R^{s}\right)T+R^{s}y}{\beta R^{d}+R^{s}}+\frac{2N}{\beta+1}         \\ c_2 &= \frac{\beta R^{d}\left(R^{s}\left(\beta+1\right)\left(N+y\right)+\left(R^{s}-R^{d}\right)\left(2N-\left(\beta+1\right)T\right)\right)}{\left(\beta+1\right)\left(\beta R^{d}+R^{s}\right)}
+    %         \end{empheq}
         % \begin{empheq}[box=\fbox]{{align}
         %     d&=\frac{R^{d}\left(\beta y+N\right)-\left(R^{s}-R^{d}\right)(N-T)}{\beta R^{d}+R^{s}} 
         %     \\ c_1 &= \frac{d (T - 2 N) + s (N - T + y)}{\beta d + s} + \frac{2N}{\beta + 1} 
@@ -366,7 +401,7 @@ The credit crunch model discussed in class captures the following empirical phen
 
         From my work in 3 (c), we have the banker's problem  \eqref{3cb} where $T$ represents tax-financed bank deposits, restated below: 
         \begin{align*}
-                \max_{s,d}\pi =&\max_{d}  R^s(N+d) - R^dd - (R^s-R^d)T  
+                \max_{s,d}\pi =&\max_{d}  R^s(N+d) - R^dd + (R^s-R^d)T  
                 \\ & s.t. \quad \begin{cases}
                     s \leq N + d + T & (BC)
                     \\ \pi \geq \lambda R^s(N+d) + \lambda (R^s - R^d)T & (IC)
@@ -374,13 +409,14 @@ The credit crunch model discussed in class captures the following empirical phen
         \end{align*}
         Solving the incentive constraint: 
         \begin{align*}
-             R^s(N+d) - R^dd - (R^s-R^d)T&\geq \lambda R^s(N+d) + \lambda (R^s - R^d)T
-            \\ 0 &\leq  \left(1-\lambda\right)R^{s}(N+d)-R^{d}d-\left(\lambda+1\right)(R^{s}-R^{d})T
-            \\ d &\leq \frac{\left(1-\lambda\right)R^{s}N-\left(\lambda+1\right)(R^{s}-R^{d})T}{R^{d}-\left(1-\lambda\right)R^{s}}
+             R^s(N+d) - R^dd + (R^s-R^d)T&\geq \lambda R^s(N+d) + \lambda (R^s - R^d)T
+            % \\ 0 &\leq  \left(1-\lambda\right)R^{s}(N+d)-R^{d}d-\left(\lambda+1\right)(R^{s}-R^{d})T
+            % \\ d &\leq \frac{\left(1-\lambda\right)R^{s}N-\left(\lambda+1\right)(R^{s}-R^{d})T}{R^{d}-\left(1-\lambda\right)R^{s}}
+            \\ d \leq & \frac{(R^{s}-R^{d})T-R^{s}N}{R^{s}+\frac{R^{d}}{\lambda-1}}
             \\d &= \begin{cases}
                  %0 & R^d > R^s
-                  \frac{(1-\lambda)}{\lambda}N & R^d = R^s 
-                 \\ \frac{\left(1-\lambda\right)R^{s}N-\left(\lambda+1\right)(R^{s}-R^{d})T}{R^{d}-\left(1-\lambda\right)R^{s}} & (1-\lambda)R^s < R^d < R^s
+                 \left(0, \frac{(1-\lambda)}{\lambda}N\right) & R^d = R^s 
+                 \\ \frac{(R^{s}-R^{d})T-R^{s}N}{R^{s}+\frac{R^{d}}{\lambda-1}} & (1-\lambda)R^s < R^d < R^s
              \end{cases} && \text{(demand)}
         \end{align*}
 
@@ -410,11 +446,11 @@ The credit crunch model discussed in class captures the following empirical phen
 
         The equilibrium were found at the following and shown in Figure \eqref{fig:6d} and \eqref{fig:6d_d} for equilibrium deposit rates $d$: 
 
-        $T=0$:$ R_d = 0.811, d = 1.3949$
+        $T=0$:$ R_d =0.8106, d = 1.3949$
         
-        $T=0.4$: $R_d = 0.6545, d = 1.271$
+        $T=0.4$: $R_d =  0.7609, d = 1.3949$
 
-        Equilibrium deposits change by 0.1239.
+        Equilibrium deposits change by 0.
 
         \begin{figure}%[H]
             \centering
@@ -585,7 +621,14 @@ The credit crunch model discussed in class captures the following empirical phen
         \item[(f)] {(4 points)} Plot how the tax subsidy alters deposit supply and demand. Use Julia to make this plot and include your code. Where is the new equilibrium?
         \subsubsection*{Solution.}
 
-        The function now plots the first best allocation for demand and supply curves. See code. 
+        The function now plots the first best allocation for demand and supply curves. See Figure \eqref{fig:7f}.
+
+        \begin{figure}%[H]
+            \centering
+                \includegraphics[width=0.7\textwidth]{7f.png}
+                \caption{ }
+                \label{fig:7f}
+        \end{figure}
         
         
     \end{enumerate}
