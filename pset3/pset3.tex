@@ -1,0 +1,273 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, graphicx, caption,array, amsthm}
+\usepackage{amsfonts, xcolor, physics, listings,verbatim}
+\usepackage{amssymb,empheq, mathrsfs, comment, subfig, hyperref, url, fancyhdr, tikz, booktabs, geometry, enumitem, textcomp, subfig}
+\usepackage[T1]{fontenc} % for \symbol{92} 
+% Command "alignedbox{}{}" for a box within an align environment
+% Source: http://www.latex-community.org/forum/viewtopic.php?f=46&t=8144
+\newlength\dlf  % Define a new measure, dlf
+\newcommand\alignedbox[2]{
+% Argument #1 = before & if there were no box (lhs)
+% Argument #2 = after & if there were no box (rhs)
+&  % Alignment sign of the line
+{
+\settowidth\dlf{$\displaystyle #1$}  
+    % The width of \dlf is the width of the lhs, with a displaystyle font
+\addtolength\dlf{\fboxsep+\fboxrule}  
+    % Add to it the distance to the box, and the width of the line of the box
+\hspace{-\dlf}  
+    % Move everything dlf units to the left, so that & #1 #2 is aligned under #1 & #2
+\boxed{#1 #2}
+    % Put a box around lhs and rhs
+}
+}
+
+\addtolength{\oddsidemargin}{-1in}
+\addtolength{\evensidemargin}{-1in}
+\addtolength{\textwidth}{1.75in}
+\addtolength{\topmargin}{-1in}
+\addtolength{\textheight}{1.75in}
+\newcommand{\contra}{$\rightarrow\leftarrow$}
+\newcommand{\tb}{  \textbackslash  }
+\newcommand{\bj}{\ \Longleftrightarrow \ }
+
+%bailey meche
+\begin{document}
+%bailey meche
+	\begin{center}
+		ECMA 33230: Macroeconomic Crises - Spring 2025\\
+        Problem Set 3: Bank Runs \\
+		Due Date: April 28, 2025 \\
+        Bailey Meche
+	\end{center}
+
+\section*{1. (5 points) Banks as liquidity providers:}
+
+\begin{enumerate}[label=(\alph*)]
+    \item (2 points) Define ``liquidity'' in words.
+    \subsubsection*{Solution}
+
+    Liquidity measures how easily, quickly, and cheaply you can convert an asset into cash. 
+
+    \item (3 points) Decide for each of the following assets if it’s relatively liquid or relatively illiquid: a factory plant, stocks, bonds, balance in your checking account, a piece of land, real estate, a gold ring, Bitcoin.
+     \subsubsection*{Solution}
+
+     
+\end{enumerate}
+
+\section*{2. (15 points)}
+
+An asset that is purchased in period 0 pays out a return $R_1$ in period 1 or a return $R_2$ in period 2. Assume $R_2 \geq R_1$ and that $R_2$ is only earned if the asset is not liquidated in period 1. Imagine a consumer has preferences $(1 - \theta)u(c_1) + \theta u(c_2)$, where $\theta \in \{0, 1\}$ 
+is a bivariate iid random variable with $\Pr(\theta = 0) = \pi = 0.25$. A consumer invests $x = 2$ in period 0 but has the choice between two assets. Asset A gives returns $R_{1}^A = 1$, $R_{2}^A = 2$ and asset B earns the returns $R_{1}^B = 1.25$, $R_{2}^B = 1.85$.
+
+\begin{enumerate}[label=(\alph*)]
+    \item (3 points) Derive formally the household’s expected utility function $EU$ in terms of $\pi$, $c_1$ and $c_2$, starting from the preferences given in the question. Show all steps of your derivation.
+
+    \subsubsection*{Solution}
+    \begin{align*}
+         EU &= (1 - \theta)u(c_1) + \theta u(c_2)
+    \end{align*}
+
+    \item (2 points) What is the degree of liquidity of an asset in terms of $R_1$ and $R_2$? What is the degree of liquidity of cash? Is cash liquid or illiquid?
+    \subsubsection*{Solution}
+
+    \begin{align*}
+        \text{degree of liquidity for A} &= \frac{R_1}{R_2} = \frac{1}{2} = 0.5
+        \\ \text{degree of liquidity for B} &= \frac{R_1}{R_2} = \frac{1.25}{1.85} = 0.676
+    \end{align*}
+    Degree of liquidity of cash is 1. Cash is the baseline for liquidity as it is the standard liquid asset when considering US assets. 
+    
+
+    \item (1 point) Is asset A or asset B more liquid?
+    \subsubsection*{Solution}
+
+    From (b), we can see that asset $B$ is more liquid. 
+
+    \item (2 points) What are the maximum consumption levels $c_1$ and $c_2$ if the entire investment is used to purchase asset A in period 0? What are $c_1$ and $c_2$ if asset B is purchased instead?
+    \subsubsection*{Solution}
+
+    If the entire investment $x=2$ is used to purchase asset A in period 0, the  maximum consumption levels are $c_1 = R_{1}^Ax = 2$ in $t=1$ and $c_2 = R_{2}^Ax = 4$ in $t=2$. 
+
+    If the entire investment $x=2$ is used to purchase asset B in period 0, the  maximum consumption levels are $c_1 = R_{1}^Bx = 2.5$ in $t=1$ and $c_2 = R_{2}^Ax = 3.7$ in $t=2$. 
+
+
+    \item (2 points) For $u(c) = 1 - \frac{1}{c}$, what is the expected utility for the consumer if the entire investment is used to purchase asset A? 
+    What is the expected utility if the consumer invests everything in asset B instead? In which asset will the consumer optimally invest?
+    \subsubsection*{Solution}
+
+    If the entire investment $x=2$ is used to purchase asset A in period 0, then the expected utility is
+    \begin{align*}
+        EU_A &= (1 - \theta)u(c_1) + \theta u(c_2)
+        \\ &= 0.75 \cdot u(2) + 0.25 \cdot u(4)
+        \\ &= 0.75 \cdot  \left(1 - \frac{1}{2}\right) + 0.25 \cdot \left(1 - \frac{1}{4}\right)
+        \\ &= 0.5625
+    \end{align*}
+    If the entire investment $x=2$ is used to purchase asset B in period 0, then the expected utility  is
+    \begin{align*}
+        EU_B &= (1 - \theta)u(c_1) + \theta u(c_2)
+        \\ &= 0.75 \cdot u(2.5) + 0.25 \cdot u(3.7)
+        \\ &= 0.75 \cdot  \left(1 - \frac{1}{2.5}\right) + 0.25 \cdot \left(1 - \frac{1}{3.7}\right)
+        \\ &= 0.6324
+    \end{align*}
+    Given that $EU_B > EU_A$,  the risk-averse consumer will optimally invest in asset B.
+
+    \item (5 points) Repeat part (e) for $u(c) = c - 2.5$. If you compare your results to part (e), why does this reflect that risk aversion creates demand for liquidity? Provide intuition.
+    \subsubsection*{Solution}
+
+     If the entire investment $x=2$ is used to purchase asset A in period 0, then the expected utility is
+    \begin{align*}
+        EU_A &= (1 - \theta)u(c_1) + \theta u(c_2)
+        \\ &= 0.75 \cdot u(2) + 0.25 \cdot u(4)
+        \\ &= 0.75 \cdot  \left(2 - 2.5\right) + 0.25 \cdot \left(4-2.5\right)
+        \\ &= 0
+    \end{align*}
+    If the entire investment $x=2$ is used to purchase asset B in period 0, then the expected utility  is
+    \begin{align*}
+        EU_B &= (1 - \theta)u(c_1) + \theta u(c_2)
+        \\ &= 0.75 \cdot u(2.5) + 0.25 \cdot u(3.7)
+        \\ &= 0.75 \cdot  \left(2.5-2.5\right) + 0.25 \cdot \left(3.7-2.5\right)
+        \\ &= 0.3
+    \end{align*}
+    Given that $EU_B > EU_A$,  the risk-averse consumer will optimally invest in asset B.
+    
+\end{enumerate}
+
+\section*{3. (25 points)}
+
+Consumers live for three periods, $t = 0, 1, 2$. In period 0, each consumer has an endowment of $B = 1.5$ and decides which part of the endowment to store $y$ or invest $x$. Investment earns a return $R = 1.3$ in period 2 and has a liquidation return of $L = 0.8$ in period 1. Consumers have utility $(1-\theta)u(c_1)+\theta u(c_2)$ where $u(c) = \frac{c^{1-\sigma}}{1-\sigma}$, with $\sigma = 3$, and come in two types: impatient consumers ($\theta = 0$) only care about period 1 consumption $c_1$, and patient consumers ($\theta = 1$) only care about period 2 consumption $c_2$. Types are revealed in period 1 and $\pi = \Pr(\theta = 0) = 0.5$ with $\theta \in \{0, 1\}$ iid.
+
+\begin{enumerate}[label=(\alph*)]
+    \item (4 points) Calculate the equilibrium levels for investment $x$, consumption $c_1$ and $c_2$ and the corresponding expected utility under autarky. How would these values change if liquidation was entirely ruled out?
+    \subsubsection*{Solution}
+
+    for consumer utility $(1-\theta)u(c_1)+\theta u(c_2)$ where $u(c) = \frac{c^{1-\sigma}}{1-\sigma}$, we have the household's problem in the autarky: 
+    \begin{align*}
+        &\max_{c_1, c_2, x,y} \pi u(c_1) + (1-\pi)u(c_2) && s.t. && \begin{cases}
+            B  =x+y & t=0
+            \\ c_1 \leq y + Lx = 1-x(1-L) & t=1
+            \\ c_2 \leq y + Rx = 1+x(R-1) & t=2
+        \end{cases}
+        \\ &\max_{c_1, c_2, x,y} \frac{1}{2} \cdot  \frac{c_1^{1-\sigma}}{1-\sigma} + \frac{1}{2} \cdot  \frac{c_2^{1-\sigma}}{1-\sigma}
+        \\ &-\frac{1}{4}\max_{c_1, c_2, x,y} \frac{1}{c_{1}^{2}}+\frac{1}{c_{2}^{2}}  && s.t. && \begin{cases}
+             1.5 =x+y & t=0
+            \\ c_1 \leq 1-0.2x  & t=1
+            \\ c_2 \leq 1+0.3x & t=2
+        \end{cases}
+    \end{align*}
+    Taking FOCs, we know that 
+    \begin{align*}
+         \frac{u'(c_1)}{u'(c_2)} &= \frac{(1-\pi)(R-1)}{\pi(1-L)} 
+         \\  \frac{c_1^{-2}} {c_2^{-2}}&= 1.5
+         \\ \frac{c_1}{c_2}&= \frac{1}{\sqrt{1.5}}\approx 0.816
+         \\ c_2 &= \sqrt{1.5}c_1 
+    \end{align*}
+    This result lies in the interior solution $x\in(0,1)$, so using this to solve for $x$:
+    \begin{align*}
+       1+0.3x = c_2 &= \sqrt{1.5}c_1  = \sqrt{1.5}(1-0.2x)
+       \\  1-\sqrt{1.5}&=x\left(-0.3-0.2\sqrt{1.5}\right)
+       \\ x\ &=\ \frac{50\sqrt{1.5}-60}{3} \approx 0.4124
+       \\ c_1 &= 1-0.2\frac{50\sqrt{1.5}-60}{3} = \frac{15-10\sqrt{1.5}}{3} \approx 0.9175
+       \\ c_2 &= 1+0.3\frac{50\sqrt{1.5}-60}{3} = 5\sqrt{1.5}-5 \approx 1.1237
+    \end{align*}
+
+    If liquidation was ruled out, then impatient consumers $(\theta=0)$ are forced to move all consumption to period 2 since they cannot consume in $t=1.$ Such consumers can still choose to store or invest.
+    \begin{align*}
+        &-\frac{1}{4}\max_{c_1, c_2, x,y} \frac{1}{c_{1}^{2}}+\frac{1}{c_{2}^{2}}  && s.t. && \begin{cases}
+             1.5 =x+y & t=0
+            \\ c_1 \leq 1-x  & t=1
+            \\ c_2 \leq 1+0.3x & t=2
+        \end{cases}
+    \end{align*}?????
+    
+    
+    \item (2 points) Set up a consumer’s incomplete market problem in period 0 with the possibility to trade in period 1. What are the market equilibrium consumption levels $c_1$ and $c_2$ and the associated expected utility level?
+\subsubsection*{Solution}
+
+
+
+    \item (2 points) Compute the equilibrium levels for investment $x$, consumption $c_1$ and $c_2$ and the corresponding expected utility in an economy with financial intermediation. Assume the banking system achieves the good Nash equilibrium.
+\subsubsection*{Solution}
+
+
+
+    \item (8 points) Plot the feasible sets under autarky and under financial intermediation in a $(c_1, c_2)$-graph. Then add the indifference curves that are associated with your results from parts (a), (b) and (c) in the plot. Use Julia to make this plot and include your code.
+\subsubsection*{Solution}
+
+
+
+    \item (2 points) Why can maturity mismatch in bank’s balance sheet lead to a worse outcome than in part (c)? Provide intuition.
+\subsubsection*{Solution}
+
+
+
+    \item (3 points) Suppose the government wants to insure deposits by imposing a tax on early withdrawals to rule out bank runs. Explain how the government could do this. What is the tax rate the government sets to achieve the first best?
+\subsubsection*{Solution}
+
+
+
+    \item (4 points) Suppose there is deposit insurance in place. Calculate the consumption levels of a patient consumer who withdraws in period 1, in the two situations where more or less than the share of early consumers withdraw in period 1. Calculate the consumption levels of a patient consumer who withdraws in period 2, in the two situations where more or less than the share of early consumers withdraw in period 1.
+    \subsubsection*{Solution}
+
+    
+\end{enumerate}
+
+\section*{4. (14 points)}
+
+A measure 1 of consumers live for three periods, $t = 0, 1, 2$. In period 0 each consumer has an endowment of \$3 and decides which part of the endowment to store $y$ or invest $x$. Investment earns a return $R = 1.1$ in period 2. Consumers have expected utility function $EU = \pi u(c_1)+(1-\pi)u(c_2)$. In period 1 it is revealed if a consumer is an early type and only cares about consumption $c_1$ or a late type and only values $c_2$, where $\pi$ is the probability of being an early consumer. Early consumers can sell their investments to late consumers at price $P$ in period 1.
+
+\begin{enumerate}[label=(\alph*)]
+    \item (2 points) Write down the period-by-period budget constraints for a consumer.
+    \subsubsection*{Solution}
+
+    \item (8 points) \textbf{Extra Credit:} Prove that $P = 1$ in equilibrium.
+    \subsubsection*{Solution}
+
+    
+    \item (2 points) How much do early and late types consume in the market equilibrium?
+    \subsubsection*{Solution}
+
+    
+    \item (2 points) Assume $\pi = 0.1$, $u(c) = \frac{c^{1-\gamma}}{1- \gamma}$, $\gamma = 2$. What is the expected utility in the market?
+    \subsubsection*{Solution}
+
+
+    
+\end{enumerate}
+
+\section*{5. (8 points) Bank Runs}
+
+A demand deposit contract between bankers and consumers with endowment equal to 1 is $D = (c^B_1 = 1.04, c^B_2 = 1.06)$, where the subscripts refer to the period of withdrawal. The depositor Eva typically prefers to wait with a withdrawal until period 2, however she also knows that if a bank run occurs she can only withdraw 0.8 if she runs like everybody else or nothing if she is the only one who waits with the withdrawal to period 2.
+
+\begin{enumerate}[label=(\alph*)]
+    \item (4 points) Fill in the blank consumption level matrix to help Eva decide whether to run or not:
+    \subsubsection*{Solution}
+
+    
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            & \textbf{Everybody else Runs} & \textbf{Everybody else Does Not Run} \\
+            \hline
+            \textbf{Eva Runs} & $(\ ,\ )$ & $(\ ,\ )$ \\
+            \hline
+            \textbf{Eva Does Not Run} & $(\ ,\ )$ & $(\ ,\ )$ \\
+            \hline
+        \end{tabular}
+    \end{center}
+
+    \item (2 points) How many (pure strategy) equilibria exist in this scenario? What are the associated payoffs?
+    \subsubsection*{Solution}
+
+    \item (2 points) Under what conditions do all consumers withdraw in period $t = 1$ in a good Nash equilibrium?
+    \subsubsection*{Solution}
+
+    
+\end{enumerate}
+
+\section*{6. (5 points)}
+
+Why is the stockpiling and rationing of toilet paper at the beginning of the Corona Crisis sometimes referred to as a “run”? Explain the similarities to a bank run.
+\subsubsection*{Solution}
+
+
+\end{document}
