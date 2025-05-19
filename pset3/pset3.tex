@@ -37,7 +37,7 @@
 	\begin{center}
 		ECMA 33230: Macroeconomic Crises - Spring 2025\\
         Problem Set 3: Bank Runs \\
-		Due Date: April 28, 2025 \\
+		Due Date: May 18, 2025 \\
         Bailey Meche
 	\end{center}
 
@@ -68,7 +68,9 @@ is a bivariate iid random variable with $\Pr(\theta = 0) = \pi = 0.25$. A consum
 
     \subsubsection*{Solution}
     \begin{align*}
-         EU &= \pi u(c_1) + (1-\pi) u(c_2)
+    U &= (1 - \theta)u(c_1) + \theta u(c_2)
+    \\ EU = \mathbb{E}[U]&= \mathbb{E}\left((1 - \theta)u(c_1) + \theta u(c_2)\right)
+    \\      &= \pi u(c_1) + (1-\pi) u(c_2)
     \end{align*}
 
     \item (2 points) What is the degree of liquidity of an asset in terms of $R_1$ and $R_2$? What is the degree of liquidity of cash? Is cash liquid or illiquid?
@@ -84,7 +86,7 @@ is a bivariate iid random variable with $\Pr(\theta = 0) = \pi = 0.25$. A consum
     \item (1 point) Is asset A or asset B more liquid?
     \subsubsection*{Solution}
 
-    From (b), we can see that asset $B$ is more liquid. 
+    From (b), we can see that asset $B$ is more liquid since $\frac{R_1^A}{R_2^A} < \frac{R_1^B}{R_2^B}$ where liquidity increases as $l\to 1.$
 
     \item (2 points) What are the maximum consumption levels $c_1$ and $c_2$ if the entire investment is used to purchase asset A in period 0? What are $c_1$ and $c_2$ if asset B is purchased instead?
     \subsubsection*{Solution}
@@ -259,7 +261,7 @@ Consumers live for three periods, $t = 0, 1, 2$. In period 0, each consumer has 
     \begin{align*}
          \frac{u'(c_1)}{u'(c_2)} &= R
          \\ \frac{u'\left(\frac{1.5-x}{\pi}\right)}{u'\left(\frac{Rx}{1-\pi}\right)} &=
-         \\ \frac{\left(\frac{1.5-x}{\pi}\right)^{-2}}{\left(\frac{Rx}{1-\pi}\right)^{-2}}&=
+         \\ \frac{\left(\frac{1.5-x}{\pi}\right)^{-2}}{\left(\frac{Rx}{1-\pi}\right)^{-2}}&=1.3
          \\ \frac{1.5-x}{\pi}\left(\frac{1-\pi}{Rx}\right) &= \frac{1}{\sqrt{1.3}}
     \end{align*}
     which provides 
@@ -327,7 +329,7 @@ If a  late-type consumer $i$ perceives that all other late types  $-i$ in $t=1$ 
             \\ (1-\pi) c_2 = Rx & t=2
         \end{cases}
     \end{align*}
-    Now, the dominant strategy for late-type consumers is to wait (not run).
+    Now, the dominant strategy for late-type consumers is to wait (not run). The equilibrium consumption levels for this problem achieves the first best levels $c_1^*, c_2^*.$
 
     \item (4 points) Suppose there is deposit insurance in place. Calculate the consumption levels of a patient consumer who withdraws in period 1, in the two situations where more or less than the share of early consumers withdraw in period 1. Calculate the consumption levels of a patient consumer who withdraws in period 2, in the two situations where more or less than the share of early consumers withdraw in period 1.
     \subsubsection*{Solution}
@@ -412,7 +414,7 @@ In a frictionless, competitive market those two must deliver the same  marginal 
 \begin{equation}
     \underbrace{P}_{\substack{\text{price at}~t=1}}
 \;=\;
-\underbrace{\frac{u'(c_2)}{u'(c_1)}}_{\substack{\text{marginal}\\\text{rate of substitution}}}  R.
+\underbrace{\frac{u'(c_2)}{u'(c_1)}}_{\substack{\text{marginal}\\\text{rate of substitution}}} \cdot R.
 \label{No–arb}
 \end{equation}
 But from \eqref{FOC} we get
@@ -444,10 +446,7 @@ $$
 To verify, the FOC becomes $$\pi\cdot0 + (1-\pi)(R-1)u'(c_2)=0$$ which can only hold if $(1-\pi)(R-1)=0$.  Since $R>1$ and $\pi<1$, the only way is that the interior optimum disappears and we end up at a corner solution in which the marginal trades exactly offset.
 The no-arbitrage condition reduces to $$1 = \dfrac{u'(c_2)}{u'(c_1)}R,$$ which requires $u'(c_1)=R\,u'(c_2)$.  Together with the resource constraint this pins down the unique competitive equilibrium consumption plan.
 
-But since the only way both \eqref{FOC} and \eqref{No–arb} can be satisfied is by pushing the candidate interior solution into the corner and yielding consistency only at $P=1$, we conclude that the equilibrium price in the market outcome must be
-$$
-\boxed{P=1.}
-$$    
+But since the only way both \eqref{FOC} and \eqref{No–arb} can be satisfied is by pushing the candidate interior solution into the corner and yielding consistency only at $P=1$, we conclude that the equilibrium price in the market outcome must be $P=1$.
     
     \item (2 points) How much do early and late types consume in the market equilibrium?
     \subsubsection*{Solution}
